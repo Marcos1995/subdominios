@@ -1,0 +1,9 @@
+name = "subdominios"
+main = "worker.js"
+compatibility_date = "2026-10-06"
+
+# Una vez: dominio real en config.js y en las dos líneas de abajo, luego
+# npx wrangler deploy. En Cloudflare, ruta *.dominio y el apex a este worker.
+[vars]
+OWNER = "Marcos1995"
+DOMAIN = "midominio.es"

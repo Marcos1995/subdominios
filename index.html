@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-surface-canvas" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0" name="viewport"/>
+<title>Cada repo público ya es su subdominio</title>
+<script>
+(function () {
+  var saved = localStorage.getItem("theme");
+  var dark = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  if (dark) document.documentElement.classList.add("dark");
+})();
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#006d37",
+            "tertiary-fixed": "#91f8ad",
+            "on-secondary-container": "#3f6e4f",
+            "status-warning": "#F5A623",
+            "primary-fixed-dim": "#12e465",
+            "surface-dark": "#0A3D22",
+            "surface-variant": "#c5eccc",
+            "inverse-primary": "#12e465",
+            "secondary-fixed-dim": "#9fd2ad",
+            "surface-container-high": "#cbf2d2",
+            "inverse-surface": "#153721",
+            "primary": "#006e2c",
+            "on-background": "#00210e",
+            "on-tertiary-container": "#006130",
+            "on-tertiary-fixed-variant": "#005228",
+            "on-surface": "#00210e",
+            "surface-bright": "#eaffeb",
+            "secondary": "#396849",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#006126",
+            "on-secondary-fixed": "#00210f",
+            "inverse-on-surface": "#d3fada",
+            "surface-container-highest": "#c5eccc",
+            "on-primary-fixed": "#002108",
+            "surface-card": "#FFFFFF",
+            "tertiary-container": "#77dd95",
+            "surface-container": "#d0f8d7",
+            "on-primary-fixed-variant": "#00531f",
+            "on-secondary": "#ffffff",
+            "surface-subtle": "#E8EFEA",
+            "text-primary": "#032612",
+            "border-subtle": "#D5E2D9",
+            "secondary-container": "#bbefc7",
+            "on-tertiary-fixed": "#00210c",
+            "tertiary-fixed-dim": "#75db93",
+            "background": "#eaffeb",
+            "surface-container-low": "#d6fddd",
+            "on-error": "#ffffff",
+            "surface-canvas": "#F4F7F5",
+            "outline-variant": "#bacbb7",
+            "text-on-dark": "#FFFFFF",
+            "on-error-container": "#93000a",
+            "border-strong": "#A8C7B2",
+            "secondary-fixed": "#bbefc7",
+            "outline": "#6b7b6a",
+            "surface-tint": "#006e2c",
+            "error": "#ba1a1a",
+            "primary-container": "#18e667",
+            "on-secondary-fixed-variant": "#205033",
+            "text-on-primary": "#032612",
+            "surface": "#eaffeb",
+            "text-muted": "#3D664E",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "primary-fixed": "#68ff8a",
+            "on-surface-variant": "#3c4b3b",
+            "surface-dim": "#bde4c4",
+            "status-alert": "#E63946"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "label-md": ["Public Sans"],
+            "body-sm": ["Public Sans"],
+            "headline-lg-mobile": ["Public Sans"],
+            "body-lg": ["Public Sans"],
+            "display-hero": ["Public Sans"],
+            "headline-md": ["Public Sans"],
+            "headline-sm": ["Public Sans"],
+            "label-lg": ["Public Sans"],
+            "code-data": ["Public Sans"],
+            "body-md": ["Public Sans"],
+            "display-hero-mobile": ["Public Sans"],
+            "headline-lg": ["Public Sans"],
+            "label-sm": ["Public Sans"]
+          },
+          "fontSize": {
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "800"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "700"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "code-data": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.025em", "fontWeight": "900"}],
+            "headline-lg": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    :focus-visible { outline: 2px solid #032612; outline-offset: 3px; }
+    .theme-switch {
+      position: relative; width: 3.5rem; height: 1.85rem; border-radius: 999px;
+      border: 1px solid #032612; background: #eaffeb; padding: 0; flex-shrink: 0;
+    }
+    .theme-switch .mark { position: absolute; top: 0.28rem; width: 1.15rem; height: 1.15rem; }
+    .theme-switch .sun { left: 0.28rem; color: #032612; }
+    .theme-switch .moon { right: 0.28rem; color: #032612; }
+    .theme-switch .thumb {
+      position: absolute; top: 0.18rem; left: 0.18rem; width: 1.4rem; height: 1.4rem;
+      border-radius: 999px; background: #18E667; border: 1px solid #032612;
+      transition: transform .2s ease;
+    }
+    html.dark .theme-switch { background: #0A3D22; border-color: #18E667; }
+    html.dark .theme-switch .sun,
+    html.dark .theme-switch .moon { color: #eaffeb; }
+    html.dark .theme-switch .thumb { transform: translateX(1.62rem); }
+    html.js .reveal { opacity: 0; transform: translateY(18px); }
+    html.js .reveal.in { opacity: 1; transform: none; transition: opacity .55s ease, transform .55s ease; }
+    html.js .reveal h1, html.js .reveal h2 { transform: scale(.94); transform-origin: left center; }
+    html.js .reveal.in h1, html.js .reveal.in h2 { transform: none; transition: transform .55s ease; }
+    html.dark body, html.dark header, html.dark nav, html.dark footer { background: #07140d; color: #e8f6ec; }
+    html.dark .text-text-primary { color: #e8f6ec; }
+    html.dark .text-text-muted { color: #b7d4c4; }
+    html.dark .bg-surface-card { background: #10281c; color: #e8f6ec; }
+    html.dark .bg-surface-subtle { background: #163526; }
+    html.dark .bg-surface-container { background: #1a3d2c; }
+    html.dark .border-border-subtle, html.dark .border-border-strong { border-color: #24553c; }
+    h1 { white-space: normal; overflow-wrap: break-word; }
+    html.dark .text-on-primary-container { color: #d8ffe8; }
+    html.dark .text-primary { color: #18E667; }
+    html.dark .text-surface-dark { color: #d7ffe8; }
+    html.dark section.bg-surface-dark .text-primary { color: #006e2c; }
+    html.dark .bg-primary-container { background: #18E667; }
+    html.dark .bg-primary-container .text-text-primary,
+    html.dark .bg-primary-container .text-label-md,
+    html.dark .bg-primary-container .text-label-lg { color: #032612; }
+    html.dark section.bg-surface-dark .bg-surface-canvas { background: #F4F7F5; color: #032612; }
+    html.dark section.bg-surface-dark .bg-surface-canvas .text-text-primary { color: #032612; }
+    html.dark section.bg-surface-dark .bg-surface-canvas .text-text-muted { color: #3D664E; }
+    .host { overflow-wrap: anywhere; }
+    @media (prefers-reduced-motion: reduce) {
+      html.js .reveal, html.js .reveal h1, html.js .reveal h2, .theme-switch .thumb { opacity: 1; transform: none; transition: none; }
+      html.dark .theme-switch .thumb { transform: translateX(1.62rem); }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen bg-surface-canvas text-text-primary antialiased flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-text-primary">
+<!-- TopAppBar (From JSON Specification) -->
+<header class="bg-surface-canvas sticky top-0 z-40 border-b border-border-subtle">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin max-w-7xl mx-auto h-16">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary" data-icon="dns">dns</span>
+<span class="text-headline-sm font-headline-sm font-bold text-text-primary tracking-tight">Subdominios DNS</span>
+</div>
+<button class="theme-switch" id="theme-switch" type="button" aria-label="Tema claro o oscuro" aria-pressed="false">
+<svg class="mark sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><g stroke="currentColor" stroke-width="2"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></g></svg>
+<svg class="mark moon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14.5 2.5a8.5 8.5 0 1 0 7 12.2A7 7 0 0 1 14.5 2.5z"/></svg>
+<span class="thumb"></span>
+</button>
+<button class="js-paso hidden sm:flex bg-surface-dark text-text-on-dark px-space-md py-space-xs rounded-xl font-label-md text-label-md hover:bg-surface-variant hover:text-text-primary transition-all duration-150 active:scale-[0.98] border border-border-subtle items-center gap-1 shadow-sm" type="button">
+<span>Publicar el comodín</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Horizontal Scroll Navigation Tabs (Mobile optimized < 768px, strictly single track) -->
+<nav class="sticky top-16 z-30 bg-surface-canvas/95 backdrop-blur-sm border-b border-border-subtle w-full">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-2.5 scroll-smooth">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-dark text-primary-container flex items-center gap-1.5 shadow-sm transition-all duration-150 active:scale-[0.98]" id="tab-resumen" type="button">
+<span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span>
+          Resumen
+        </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-subtle text-text-primary hover:bg-border-subtle transition-all duration-150 active:scale-[0.98]" id="tab-repos" type="button">
+          Repos
+        </button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-subtle text-text-primary hover:bg-border-subtle transition-all duration-150 active:scale-[0.98]" id="tab-paso" type="button">
+          Paso único
+        </button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin py-6 space-y-8">
+<!-- 2. Cabecera editorial expresiva -->
+<section class="reveal space-y-4" id="sec-resumen">
+<div class="flex flex-wrap items-center gap-2">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-subtle border border-border-subtle text-text-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span>
+<span>Marcos1995 · 6 oct 2026</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container border border-border-strong text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="code">code</span>
+<span>GitHub API pública</span>
+</div>
+</div>
+<div class="space-y-2">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-text-primary tracking-tight font-extrabold max-w-3xl">
+          Cada repo público ya es su subdominio
+        </h1>
+<p class="text-text-muted font-body-md text-body-md max-w-2xl">
+          Mapeo dinámico y resolución automática de registros de nombres para repositorios individuales sin configuraciones manuales de CNAME.
+        </p>
+</div>
+<div>
+<button class="js-paso bg-surface-dark text-text-on-dark px-space-lg py-3 rounded-2xl font-label-lg text-label-lg hover:border-primary-container hover:border transition-all duration-150 active:scale-[0.98] inline-flex items-center gap-2.5 shadow-md" type="button">
+<span class="material-symbols-outlined text-primary-container text-[20px]" data-icon="publish">publish</span>
+<span>Publicar el comodín</span>
+</button>
+</div>
+</section>
+<!-- 3. Cuatro KPIs Asimétricos -->
+<section class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- KPI 1 (Hero principal destacado) -->
+<article class="bg-primary-container rounded-3xl p-5 border border-[#14C95A] shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label-md text-text-primary font-bold tracking-wider">HERO TELEMETRY</span>
+<span class="material-symbols-outlined text-text-primary text-[28px]" data-icon="folder_managed">folder_managed</span>
+</div>
+<div class="my-4">
+<div class="text-display-hero-mobile md:text-display-hero font-display-hero-mobile md:font-display-hero text-text-primary leading-none" id="kpi-repos">…</div>
+<div class="text-label-lg font-label-lg text-text-primary mt-1">repos públicos</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-dark text-text-on-dark font-label-sm text-label-sm w-fit" id="kpi-repos-pill">
+<span class="text-primary-container font-bold">▲</span> salen solos al publicar
+        </div>
+</article>
+<!-- KPI 2 -->
+<article class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label-md text-text-muted">COBERTURA COMODÍN</span>
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="domain">domain</span>
+</div>
+<div class="my-4">
+<div class="text-display-hero-mobile md:text-display-hero font-display-hero-mobile md:font-display-hero text-text-primary leading-none" id="kpi-cover">…</div>
+<div class="text-body-md font-body-md text-text-muted mt-1">subdominios que cubre el comodín</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-subtle text-text-primary font-label-sm text-label-sm w-fit border border-border-subtle">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          mismo conteo, no es otra medida
+        </div>
+</article>
+<!-- KPI 3 -->
+<article class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label-md text-text-muted">INTERVENCIÓN</span>
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="task_alt">task_alt</span>
+</div>
+<div class="my-4">
+<div class="text-display-hero-mobile md:text-display-hero font-display-hero-mobile md:font-display-hero text-text-primary leading-none">0</div>
+<div class="text-body-md font-body-md text-text-muted mt-1">altas manuales en Hostinger</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-primary-container font-label-sm text-label-sm w-fit">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified">verified</span>
+          cero registros manuales requeridos
+        </div>
+</article>
+<!-- KPI 4 -->
+<article class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="text-label-md font-label-md text-text-muted">DELEGACIÓN</span>
+<span class="material-symbols-outlined text-primary text-[24px]" data-icon="alt_route">alt_route</span>
+</div>
+<div class="my-4">
+<div class="text-display-hero-mobile md:text-display-hero font-display-hero-mobile md:font-display-hero text-text-primary leading-none">1</div>
+<div class="text-body-md font-body-md text-text-muted mt-1">paso (nameservers)</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-subtle text-text-muted font-label-sm text-label-sm w-fit border border-border-subtle">
+<span class="material-symbols-outlined text-[14px]" data-icon="bolt">bolt</span>
+          1 configuración = repos infinitos
+        </div>
+</article>
+</section>
+<!-- 4. Data Viz (Sección de Gráficos) -->
+<section class="reveal grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Gráfico 1: Barras Horizontales SVG -->
+<article class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-label-sm font-label-sm text-text-muted">DISTRIBUCIÓN DE CÓDIGO</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary tracking-tight" id="chart-lang-title">
+            Cargando lenguajes desde GitHub
+          </h2>
+<p class="text-body-sm font-body-sm text-text-muted mt-1" id="chart-lang-cap">
+            Cada barra es el número de repos con ese lenguaje, sobre el mismo listado.
+          </p>
+</div>
+<div class="my-6 space-y-3.5" id="chart-lang"></div>
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between text-body-sm font-body-sm text-text-muted">
+<span>Lenguaje que GitHub marca en el repo. No es líneas de código.</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="info">info</span>
+</div>
+</article>
+<!-- Gráfico 2: Comparación de Segmentos -->
+<article class="bg-surface-card rounded-2xl p-5 border border-border-subtle shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary-container border border-surface-dark"></span>
+<span class="text-label-sm font-label-sm text-text-muted">DESPLIEGUE EN CLOUD</span>
+</div>
+<h2 class="text-headline-sm font-headline-sm text-text-primary tracking-tight" id="chart-pages-title">
+            Cargando Pages desde GitHub
+          </h2>
+<p class="text-body-sm font-body-sm text-text-muted mt-1" id="chart-pages-cap">
+            Con Pages el subdominio puede servir el sitio. Sin Pages, github.io responde 404.
+          </p>
+</div>
+<div class="my-6 space-y-4" id="chart-pages"></div>
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between text-body-sm font-body-sm text-text-muted">
+<span>Campo has_pages de la API. No mide visitas.</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="dns">dns</span>
+</div>
+</article>
+</section>
+<!-- 5. Control de Filtro interactivo -->
+<section class="reveal space-y-3" id="sec-filtro">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface-card p-3 rounded-2xl border border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[20px]" data-icon="filter_list">filter_list</span>
+<span class="font-label-md text-label-md text-text-primary">Filtrar por Lenguaje:</span>
+</div>
+<!-- Segmented options control with JS trigger -->
+<div class="flex items-center gap-1 overflow-x-auto no-scrollbar" id="language-filter"></div>
+</div>
+</section>
+<!-- 6. Ranking de Repositorios (Filas diferenciadas, no repetitivas) -->
+<section class="reveal space-y-3" id="sec-repos">
+<div class="flex items-center justify-between">
+<h2 class="text-headline-sm font-headline-sm text-text-primary tracking-tight">Repositorios públicos, del más reciente</h2>
+<span class="font-label-sm text-label-sm text-text-muted" id="host-hint">Resolución *.midominio.es</span>
+</div>
+<div class="space-y-3" id="repo-list">
+<p class="text-text-muted" id="repo-empty">Cargando repos públicos…</p>
+</div>
+</section>
+<!-- 7. Sección de Paso Único (Bloque de contraste profundo #0A3D22 / #032612) -->
+<section class="reveal bg-surface-dark text-text-on-dark rounded-3xl p-6 md:p-8 space-y-6 shadow-md border border-tertiary" id="sec-paso">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/30 border border-primary-container/40 text-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]" data-icon="memory">memory</span>
+          ARQUITECTURA DELEGADA
+        </div>
+<h2 class="text-headline-md md:text-headline-lg font-headline-md md:font-headline-lg text-text-on-dark font-extrabold tracking-tight">
+          El paso único: nameservers en Cloudflare + Worker comodín
+        </h2>
+<p class="text-body-md font-body-md text-surface-subtle leading-relaxed max-w-3xl" id="paso-copy">
+          El dominio sigue registrado en Hostinger; únicamente se delegan los nameservers a Cloudflare y se activa el worker. A partir de ese momento, <span class="font-code-data font-bold text-primary-container">ventana.midominio.es</span> resuelve y sirve directamente el contenido del repositorio <span class="font-code-data font-bold text-primary-container">ventana</span> sin necesidad de configurar registros CNAME o alias manualmente jamás.
+        </p>
+</div>
+<!-- Flow Diagram en 2 Pasos -->
+<div class="pt-4 border-t border-secondary/40">
+<div class="text-label-md font-label-md text-primary-container mb-3 tracking-wider">FLUJO DE RESOLUCIÓN AUTOMÁTICA</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3 items-stretch">
+<!-- Paso A -->
+<div class="bg-surface-canvas text-text-primary p-4 rounded-2xl flex flex-col justify-between border border-border-subtle">
+<div>
+<div class="flex items-center justify-between text-text-muted mb-2">
+<span class="text-label-sm font-label-sm">PASO 1</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="badge">badge</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-text-primary">Hostinger</div>
+<div class="text-body-sm font-body-sm text-text-muted mt-1">Registrador &amp; Titularidad del dominio principal</div>
+</div>
+<div class="mt-3 text-label-sm font-label-sm text-tertiary font-bold">NS Delegados ➔</div>
+</div>
+<!-- Paso B -->
+<div class="bg-surface-canvas text-text-primary p-4 rounded-2xl flex flex-col justify-between border-2 border-primary-container shadow-sm">
+<div>
+<div class="flex items-center justify-between text-text-muted mb-2">
+<span class="text-label-sm font-label-sm text-primary font-bold">PASO 2 (CLAVE)</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="hub">hub</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-text-primary">Cloudflare DNS + Worker</div>
+<div class="font-code-data text-code-data text-primary mt-1 font-bold">*.midominio.es</div>
+<div class="text-body-sm font-body-sm text-text-muted mt-1">Intercepta y mapea la cabecera HTTP host</div>
+</div>
+<div class="mt-3 text-label-sm font-label-sm text-tertiary font-bold">Sirve contenido ➔</div>
+</div>
+<!-- Paso C -->
+<div class="bg-surface-canvas text-text-primary p-4 rounded-2xl flex flex-col justify-between border border-border-subtle">
+<div>
+<div class="flex items-center justify-between text-text-muted mb-2">
+<span class="text-label-sm font-label-sm">DESTINO</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="deployed_code">deployed_code</span>
+</div>
+<div class="font-headline-sm text-headline-sm font-bold text-text-primary">GitHub Repos</div>
+<div class="text-body-sm font-body-sm text-text-muted mt-1">Repositorio público o GitHub Pages correspondiente</div>
+</div>
+<div class="mt-3 text-label-sm font-label-sm text-tertiary font-bold">Solo si el repo tiene Pages</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (From JSON Specification & Technical Note) -->
+<footer class="bg-surface-canvas border-t border-border-subtle mt-10">
+<div class="w-full py-space-lg px-margin-mobile md:px-margin max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-space-sm">
+<div class="text-center md:text-left">
+<div class="font-code-data text-code-data text-text-muted" id="fuente">
+          Fuente: api.github.com/users/Marcos1995/repos · 6 oct 2026. No incluye repos privados ni el cambio de nameservers dentro de la cifra.
+        </div>
+<div class="font-label-sm text-label-sm text-text-muted mt-1">
+          api.github.com/users/Marcos1995/repos · 6 oct 2026
+        </div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-4 text-label-sm font-label-sm">
+<a class="text-text-muted hover:text-text-primary transition-colors duration-150" href="https://developers.cloudflare.com/workers/" rel="noopener noreferrer" target="_blank">
+          Documentación Cloudflare
+        </a>
+<span class="text-border-strong">·</span>
+<a class="text-text-muted hover:text-text-primary transition-colors duration-150" href="https://docs.github.com/en/rest" rel="noopener noreferrer" target="_blank">
+          GitHub API pública
+        </a>
+<span class="text-border-strong">·</span>
+<a class="text-text-muted hover:text-text-primary transition-colors duration-150" href="https://github.com/Marcos1995/subdominios" rel="noopener noreferrer" target="_blank">
+          Código en GitHub
+        </a>
+</div>
+</div>
+</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body></html>
